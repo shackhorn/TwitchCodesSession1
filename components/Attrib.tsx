@@ -1,11 +1,15 @@
-"use client";
+"use client"
 
 import { usePathname } from "next/navigation";
-import { Viewer } from "../app/layout";
+import { Viewer } from "../types/Viewer";
+import axios from "axios";
+import viewers from '../public/attrib.json'
 
-export default function Attrib({ viewerData }: { viewerData: Viewer[] }) {
+
+export default function Attrib() {
+    const res = viewers
     const pathname = usePathname()
-    const viewer = viewerData.find((viewer) => viewer.pageSlug == pathname.replace("/", ""));
+    const viewer = res.find((viewer) => viewer.pageSlug == pathname.replace("/", ""));
     if(pathname == "/") return null;
     return (
         <div className="fixed bottom-0 right-0 z-50 p-4 m-4 text-sm text-gray-500 bg-white rounded-lg shadow-lg dark:bg-neutral-900/50 dark:text-neutral-100" >
