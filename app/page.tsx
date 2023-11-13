@@ -11,6 +11,10 @@ export default function Home() {
       <Link className="text-xl font-black" style={{color: "orange"}} href="/cat-boom">
       Silly Cat Game
       </Link>
+      <br/>
+      <Link className="text-xl font-black" style={{color: "orange"}} href="/yippee">
+      Yippee Button
+      </Link>
 
 
 
